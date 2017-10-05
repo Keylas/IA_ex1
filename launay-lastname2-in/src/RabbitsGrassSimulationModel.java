@@ -123,7 +123,7 @@ public class RabbitsGrassSimulationModel extends SimModelImpl {
 	 */
 	private void lifeOfRabbits() {
 		//check status of every rabbit
-		for(int i=0; i<rabbitList.size(); i++) {
+		for(int i=rabbitList.size()-1; i>=0; i--) { //going backward for remove() issue
 			RabbitsGrassSimulationAgent r = rabbitList.get(i);
 			int energy = r.getEnergy();
 
@@ -136,7 +136,6 @@ public class RabbitsGrassSimulationModel extends SimModelImpl {
 			}
 		}
 	}
-
 	//Build window displaying the simlation
 	private void buildDisplay() {
 
